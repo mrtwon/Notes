@@ -9,7 +9,7 @@ interface NoteDao {
     @Query("SELECT * FROM notes")
     fun getAll(): List<NoteDbo>
 
-    @Query("SELECT * FROM notes")
+    @Query("SELECT * FROM notes ORDER BY modifiedAt DESC")
     fun getAllLiveData(): LiveData<List<NoteDbo>>
 
     @Insert
